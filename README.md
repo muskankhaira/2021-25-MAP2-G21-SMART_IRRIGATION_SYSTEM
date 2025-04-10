@@ -1,157 +1,78 @@
+[![SWUbanner](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner-direct.svg)](https://vshymanskyy.github.io/StandWithUkraine)
 
-# Smart Irrigation System: README
+# Blynk C++ Library [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Build%20your%20IoT%20App%20in%20minutes,%20right%20on%20your%20smartphone!&url=https://github.com/blynkkk/blynk-library&via=blynk_app&hashtags=IoT,iOS,Android,Arduino,ESP8266,ESP32,RaspberryPi)
 
-## 1. Project Overview
+[![GitHub version](https://img.shields.io/github/release/blynkkk/blynk-library.svg)](https://github.com/blynkkk/blynk-library/releases/latest)
+[![GitHub download](https://img.shields.io/github/downloads/blynkkk/blynk-library/total.svg)](https://github.com/blynkkk/blynk-library/releases/latest)
+[![GitHub stars](https://img.shields.io/github/stars/blynkkk/blynk-library.svg)](https://github.com/blynkkk/blynk-library/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/blynkkk/blynk-library.svg)](https://github.com/blynkkk/blynk-library/issues)
+[![Build Status](https://img.shields.io/travis/blynkkk/blynk-library.svg)](https://travis-ci.org/blynkkk/blynk-library)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/blynkkk/blynk-library/blob/master/LICENSE)
 
-The **Smart Irrigation System** is an automated system designed to control the irrigation of plants based on the soil moisture level. The system uses the **ESP32** microcontroller, a **DHT11/DHT22** sensor (for temperature and humidity), and a **soil moisture sensor**. The system is remotely controlled using the **Blynk App**. When the soil moisture drops below a certain threshold, the system turns on the water pump to irrigate the plants. The system is connected to Wi-Fi and can be monitored and controlled from anywhere via the Blynk app.
+If you like **Blynk** - give it a star, or fork it and contribute! 
+[![GitHub stars](https://img.shields.io/github/stars/blynkkk/blynk-library.svg?style=social&label=Star)](https://github.com/blynkkk/blynk-library/stargazers) 
+[![GitHub forks](https://img.shields.io/github/forks/blynkkk/blynk-library.svg?style=social&label=Fork)](https://github.com/blynkkk/blynk-library/network)
+__________
 
----
+### Blynk is a unique IoT platform for connecting any hardware to the cloud, designing apps to control them, and managing your deployed products at scale.
 
-## 2. Prerequisites
+- With Blynk Library you can connect **over 400 hardware models** (including ESP8266, ESP32, NodeMCU, all Arduinos, Raspberry Pi, Particle, Texas Instruments, etc.) to the Blynk Cloud.
 
-Before running the Smart Irrigation System, ensure that you have the following:
+- With Blynk apps for **iOS** and **Android** apps you can easily drag-n-drop graphic interfaces for any DIY or commercial project. It's a pure WYSIWG experience: no coding on iOS or Android required. 
 
-### Hardware Requirements:
-1. **ESP32 Development Board**
-2. **DHT11 or DHT22 Sensor** (for temperature and humidity readings)
-3. **Soil Moisture Sensor**
-4. **Relay Module** (for controlling the water pump)
-5. **Water Pump** (for irrigation)
-6. **RGB LED Strip** (optional, for status indication)
-7. **Jumper Wires and Breadboard**
-8. **Power Supply** (for ESP32 and water pump)
+- Hardware can connect to Blynk Cloud over the Internet using hardware connectivity available on your board (like ESP32), or with the use of various shields (Ethernet, WiFi, GSM, LTE, etc). Blynk Cloud is available for every user of Blynk **for free**.
 
-### Software Requirements:
-1. **Visual Studio Code (VS Code)** with the **PlatformIO** extension (for programming the ESP32)
-2. **Blynk App** (for remote control of the irrigation system)
-3. **Libraries**:
-   - `Blynk`
-   - `DHT sensor library`
-   - `FastLED` (for the RGB LED)
-   - `WiFi` (for ESP32 Wi-Fi connectivity)
-   - `ESP32 Board Library` (for programming the ESP32)
+![Blynk Banner](https://github.com/blynkkk/blynkkk.github.io/raw/master/images/GithubBanner.jpg)
 
----
+## Downloads
 
-## 3. Installation Instructions
+**Blynk [Arduino Library](https://github.com/blynkkk/blynk-library/releases/latest)**
 
-### 3.1 Install VS Code and PlatformIO
+**Blynk Mobile App: 
+[<img src="https://cdn.rawgit.com/simple-icons/simple-icons/develop/icons/googleplay.svg" width="18" height="18" /> Google Play](https://play.google.com/store/apps/details?id=cloud.blynk) | 
+[<img src="https://cdn.rawgit.com/simple-icons/simple-icons/develop/icons/apple.svg" width="18" height="18" /> App Store](https://apps.apple.com/us/app/blynk-iot/id1559317868)**
 
-1. Download and install **[Visual Studio Code (VS Code)](https://code.visualstudio.com/)**.
-2. Install the **PlatformIO IDE** extension from the VS Code marketplace.
+## Quickstart: Arduino + Ethernet shield
 
-### 3.2 Install Blynk Library
+* Download the Blynk app ([App Store](https://apps.apple.com/us/app/blynk-iot/id1559317868), [Google Play](https://play.google.com/store/apps/details?id=cloud.blynk))
+* Get the Auth Token from the app
+* Import this library to Arduino IDE. Guide [here](http://arduino.cc/en/guide/libraries)
+* In Arduino IDE, select `File -> Examples -> Blynk -> Boards_Ethernet -> Arduino_Ethernet`
+* Update Auth Token in the sketch and upload it to Arduino
+* Connect your Arduino with Ethernet shield to the internet
 
-1. Open **VS Code**.
-2. Open your **PlatformIO** project folder.
-3. In the **platformio.ini** file, add the following dependency for the Blynk library:
+When you are connected - check the included examples on how to use different types of connections (transports) and explore Blynk features. You can combine any example for your hardware + transport + features.
 
-```ini
-lib_deps = Blynk
-```
+## Documentation and other helpful links
 
-### 3.3 Install Other Libraries
+[The list of supported hardware](https://docs.blynk.io/en/blynk.edgent-firmware-api/supported-boards) - supported boards, Ethernet, WiFi, Cellular...  
+[Full Blynk Documentation](https://docs.blynk.io) - a complete guide on Blynk features  
+[Community (Forum)](http://community.blynk.cc) - join a 500,000 Blynk community to ask questions and share ideas  
+[Code Examples Browser](http://examples.blynk.cc) - browse examples to explore Blynk possibilities  
+[Official Website](https://blynk.io)
 
-In **platformio.ini**, also add the following dependencies:
+**Social Media:**
 
-```ini
-lib_deps = 
-    Blynk
-    DHT sensor library
-    FastLED
-```
+[Facebook](https://www.fb.com/blynkapp) | 
+[Twitter](https://twitter.com/blynk_app) | 
+[Youtube](https://www.youtube.com/blynk) | 
+[Instagram](https://www.instagram.com/blynk.iot/) | 
+[LinkedIn](https://www.linkedin.com/company/b-l-y-n-k/)
 
-PlatformIO will automatically install these libraries for your project.
+## Blynk libraries for other platforms
+* [Python, MicroPython](https://github.com/blynkkk/lib-python)
 
----
+## Libraries by community
+* [Python, MicroPython](https://github.com/vshymanskyy/blynk-library-python)
+* [Particle](https://github.com/vshymanskyy/blynk-library-particle)
+* [Lua, OpenWrt, NodeMCU](https://github.com/vshymanskyy/blynk-library-lua)
+* [OpenWrt packages](https://github.com/vshymanskyy/blynk-library-openwrt)
+* [MBED](https://developer.mbed.org/users/vshymanskyy/code/Blynk/)
+* [Node-RED for Blynk IoT](https://flows.nodered.org/node/node-red-contrib-blynk-iot)
 
-## 4. Project Setup
+## Contributing
+We accept contributions from our community: stability bugfixes, new hardware support, or any other improvements.  
+[Here](https://github.com/blynkkk/blynk-library/labels/help%20wanted) is a list of what you could help with.
 
-### 4.1 Hardware Connections
-
-1. **DHT11/DHT22 Sensor:**
-   - Connect the **VCC** pin to **3.3V** on the ESP32.
-   - Connect the **GND** pin to **GND** on the ESP32.
-   - Connect the **Data** pin to a digital I/O pin (e.g., **D2**) on the ESP32.
-
-2. **Soil Moisture Sensor:**
-   - Connect the **VCC** pin to **3.3V** on the ESP32.
-   - Connect the **GND** pin to **GND** on the ESP32.
-   - Connect the **Analog Out** pin to an analog input pin (e.g., **A0**) on the ESP32.
-
-3. **Relay Module:**
-   - Connect the **VCC** pin to **5V** on the ESP32 (if required, depending on your relay).
-   - Connect the **GND** pin to **GND** on the ESP32.
-   - Connect the **IN** pin to a digital I/O pin (e.g., **D5**) on the ESP32 to control the relay.
-
-4. **Water Pump:**
-   - Connect the **water pump** to the relay, which will control the on/off status of the pump based on moisture levels.
-
-5. **RGB LED Strip (Optional):**
-   - Connect the **RGB LED strip** to one of the PWM-capable pins on the ESP32 (e.g., **D9**) if you want visual feedback.
-
----
-
-### 4.2 Blynk Setup
-
-1. **Create a Blynk Project:**
-   - Open the Blynk app on your phone and create a new project.
-   - Select **ESP32** as the device and choose the **Wi-Fi** connection type.
-   - Once the project is created, you will receive a **Blynk Authentication Token** (This will be used in the code).
-
-2. **Configure the App:**
-   - Add necessary widgets to control and monitor the system:
-     - **Value Display** for soil moisture, temperature, and humidity.
-     - **Button** to manually control the water pump (optional).
-
-3. **Get the Template ID and Auth Token** from the Blynk project and replace the placeholders in your code with the actual values.
-
----
-
-## 5. Code Setup
-
-1. Clone or download the project repository from GitHub.
-2. Open the `smart_irrigation.ino` file in **VS Code** with the **PlatformIO** extension enabled.
-3. In the code, replace the following placeholders with your **Blynk Auth Token**, **Template ID**, and **Template Name**:
-   ```cpp
-   #define BLYNK_TEMPLATE_ID    "YourTemplateID"
-   #define BLYNK_TEMPLATE_NAME  "SmartIrrigationSystem"
-   #define BLYNK_AUTH_TOKEN     "YourAuthToken"
-   ```
-
-4. Select the correct **ESP32 board** and **port** in **VS Code** (under **PlatformIO** settings).
-5. Upload the code to the ESP32 by clicking on the **Upload** button in PlatformIO.
-
----
-
-## 6. Running the Project
-
-1. After uploading the code to the ESP32, open the **Blynk app** on your phone.
-2. Tap **Play** in the Blynk app to start interacting with the Smart Irrigation System.
-3. Monitor real-time data such as soil moisture, temperature, and humidity.
-4. The system will automatically water the plants based on the soil moisture level.
-
----
-
-## 7. Troubleshooting
-
-- **No Wi-Fi Connection:** Ensure the ESP32 is within range of your Wi-Fi network, and check your Wi-Fi credentials.
-- **Incorrect Data from Sensors:** Verify the wiring and ensure the correct libraries are used for the sensors.
-- **Relay Not Working:** Double-check the relay wiring and ensure the relay is rated for the water pump you are using.
-
----
-
-## 8. Future Enhancements
-
-- Integration with **weather APIs** to predict future irrigation requirements.
-- Logging of sensor data for analysis and optimization of irrigation schedules.
-- Remote notifications (e.g., via email or Blynk push notifications) when irrigation occurs.
-
----
-
-## 9. Conclusion
-
-The Smart Irrigation System helps automate the process of watering plants based on real-time soil moisture readings. With the integration of the **ESP32** and **Blynk app**, this system can be controlled and monitored remotely, making irrigation more efficient and ensuring plants are properly cared for.
-
-```
-
+### License
+This project is released under The MIT License (MIT)
